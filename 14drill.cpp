@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 class B1 {
 public:
@@ -29,13 +30,15 @@ public:
 
 class D21 : public B2{
 public:
-	int member;
-	void pvf() override {std::cout << "D21::pvf\n" << member << "\n";}
+	void pvf() override {std::cout << "D21::pvf\n" << jajaj << "\n";}
+private:
+	int jajaj = 22;
 };
 class D22 : public B2{
 public:
-	int member;
-	void pvf() override {std::cout << "D22::pvf\n" << member << "\n";}
+	void pvf() override {std::cout << "D22::pvf\n" << hehej << "\n";}
+private:
+	int hehej = 22;
 };
 
 void f(B2& b){
