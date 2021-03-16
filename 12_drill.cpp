@@ -6,16 +6,20 @@ int main()
 try {
 	using namespace Graph_lib;
 	
+	int ymax = 720;
+	int xmax = 1280;
 
-	Simple_window win{Point{100,100}, 600, 400, "Ablakom"};
+	Simple_window win{Point{100,100}, xmax, ymax, "Ablakom"};
 
+	Image ii {Point{10,10},"papo.jpg"};
+	win.attach(ii);
+	ii.move(100,ymax/2);
 
-
-	Axis xa{Axis::x, Point{40,400}, 250, 13, "x axis"};
+	Axis xa{Axis::x, Point{20,ymax/2}, xmax-40, 20, "x axis"};
 	win.attach(xa);
 
 
-	Axis ya{Axis::y, Point{40,400}, 250, 13, "y axis"};
+	Axis ya{Axis::y, Point{xmax/2,ymax}, ymax-40, 20, "y axis"};
 	win.attach(ya);
 	ya.set_color(Color::cyan);
 	ya.label.set_color(Color::dark_green);
@@ -63,9 +67,7 @@ try {
 
 
 
-	Image ii {Point{10,10},"papo.jpg"};
-	win.attach(ii);
-	ii.move(35,120);
+	
 
 
 	Circle c {Point{100,200},70};
