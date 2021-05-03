@@ -149,11 +149,11 @@ int main()
     //MAP
     std::map<std::string,int> msi;
 
-	std::string test = "a";
+	std::string pair1 = "pair1";
 	for(int i = 0; i < 10; ++i)
 	{
-		msi.insert(std::pair<std::string,int>(test, i + 1 ));
-		test += "a";
+		msi.insert(std::pair<std::string,int>(pair1, i + 1 ));
+		pair1 = pair1.substr(0,4) + std::to_string(i+2);
 	}
 
 	my_print(msi);
